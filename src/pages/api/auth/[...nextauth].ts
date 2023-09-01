@@ -30,13 +30,17 @@ jwt: {
   callbacks: {
     async jwt({ token, profile }) {
       if (profile) {
-        token.username = profile?.login
+        token.username = profile?.name
       }
       return token
     },
     session({ session, token }) {
       if (token.username) {
-        session.username = token?.username
+        // const sessionInfo = session?.user?.name
+        if (session.user !== undefined){
+          session.user.name = token?.username
+        }
+        
       }
       return session
     }
