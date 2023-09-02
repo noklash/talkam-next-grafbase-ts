@@ -37,9 +37,9 @@ jwt: {
     session({ session, token }) {
       if (token.username) {
         // const sessionInfo = session?.user?.name
-        if (session.user !== undefined){
-          session.user.name = token?.username
-        }
+        // if (session.user !== undefined){
+          session.user = token?.username
+        // }
         
       }
       return session
