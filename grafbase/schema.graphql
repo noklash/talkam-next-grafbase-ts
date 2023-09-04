@@ -5,11 +5,7 @@ type Message @model {
   likes: Int @default(value: 0)
 }
 
-//Since NextAuth.js requires users to be logged in, 
-//we want to do the same with our Grafbase Database.
-//Grafbase Auth lets us configure which auth strategy 
-//should be used to protect our backend. 
-//Since NextAuth.js issues JWTs we will use the jwt provider
+
 
 schema
   @auth(
