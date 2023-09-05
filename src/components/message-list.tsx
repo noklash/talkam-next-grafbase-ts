@@ -1,6 +1,6 @@
 import { gql, useQuery } from '@apollo/client'
-import type { Message as IMessage } from '@apollo/client'
-import { Message } from '@components/message'
+import type { Message as IMessage } from '@/components/message'
+import { Message } from '@/components/message'
 import  { useInView } from 'react-intersection-observer'
 import { useEffect } from 'react';
 
