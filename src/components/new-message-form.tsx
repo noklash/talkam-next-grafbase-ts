@@ -21,7 +21,7 @@ export const NewMessageForm = () => {
     return (
         <form
             onSubmit={e => {
-                e.preventDefault()
+                e.preventDefault();
 
                 if (body){
                     addNewMessage({
@@ -42,7 +42,7 @@ export const NewMessageForm = () => {
                             name="message"
                             placeholder="write a message..."
                             value={body}
-                            onChange={e => setBody(e.target.value)}
+                            onChange={(e) => setBody(e.target.value)}
                             className="flex-1 h-12 px-3 rounded bg-[#222226] border border-[#222226] focus:border-[#222226] focus:outline-none text-white placeholder-white"
                         />
 
