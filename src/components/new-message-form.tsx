@@ -1,9 +1,10 @@
 import { gql, useMutation } from "@apollo/client";
 import { useState } from 'react'
 import { useSession } from 'next-auth/react'
+// import useSound from 'use-sound'
 
-const AddNewMessageMutuation = gql`
-    mutuation AddNewMessage($username: String!, $avatar: URL, $body: String!){
+const AddNewMessageMutation = gql`
+    mutation AddNewMessage($username: String!, $avatar: URL, $body: String!){
         messageCreate(
             input: { username:  $username, avatar: $avatar, body: $body  }    
         ) {
@@ -16,7 +17,7 @@ const AddNewMessageMutuation = gql`
 export const NewMessageForm = () => {
     const { data: session } = useSession()
     const [body, setBody] = useState("")
-    const [addNewMessage] = useMutation(AddNewMessageMutuation)
+    const [addNewMessage] = useMutation(AddNewMessageMutation)
     return (
         <form
             onSubmit={e => {
@@ -49,6 +50,9 @@ export const NewMessageForm = () => {
                             type="submit"
                             className="bg-[#222226] rounded h-12 font-medium text-white w-24 text-lg border border-transparent"
                             disabled={!body || !session}
+                            >
+                                Send
+                            </button>
 
                     </form>
     )
