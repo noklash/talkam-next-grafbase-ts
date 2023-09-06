@@ -12,7 +12,7 @@ export function Header() {
                     {session ? (
                         <div className="flex space-x-1">
                             {session?.user?.image && (
-                                <div className="w-12 h-12 rounded overflow-hidden">
+                                <div className="w-12 h-12 rounded-full overflow-hidden">
                                     <Image
                                         width={50}
                                         height={50}
