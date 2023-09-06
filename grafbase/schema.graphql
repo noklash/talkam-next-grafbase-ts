@@ -1,3 +1,13 @@
+schema
+  @auth(
+    providers: [
+      { type: jwt, issuer: "nextauth", secret: "{{ env.NEXTAUTH_SECRET }}" }
+    ]
+    rules: [{ allow: private }]
+  ) {
+  query: Query
+}
+
 type Message @model {
   username: String!
   avatar: URL
@@ -7,12 +17,4 @@ type Message @model {
 
 
 
-schema
-  @auth(
-    providers: [
-      { type: jwt, issuer: "nextauth", secret: {{ env.NEXTAUTH_SECRET }} }
-    ]
-    rules: [{ allow: private }]
-  ) {
-  query: Query
-}
+
