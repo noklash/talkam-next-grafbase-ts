@@ -19,7 +19,7 @@ const httpLink = new HttpLink({
 })
 
 const sseLink = new SSELink({
-  uri: process.env.NEXT_PUBLIC_GRAFBASE_API_URL,
+  uri: process.env.NEXT_PUBLIC_GRAFBASE_API_URL!,
 });
 
 export const ApolloProviderWrapper = ({ children }: PropsWithChildren) => {
