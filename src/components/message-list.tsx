@@ -30,8 +30,8 @@ export const MessageList = () => {
     const{ loading, error, data } = useQuery<{messageCollection: { edges: { node: IMessage }[]}
 }>(GetRecentMessagesQuery, {
     variables: {
-        last: 100
-    }
+        last: 100,
+    },
 })
 
 useEffect(() =>{
