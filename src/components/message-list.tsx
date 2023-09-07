@@ -28,7 +28,7 @@ export const MessageList = () => {
         delay: 500
     })
     const{ loading, error, data } = useQuery<{messageCollection: { edges: { node: IMessage }[]}
-}>(GetRecentMessageQuery, {
+}>(GetRecentMessagesQuery, {
     variables: {
         last: 100
     }
