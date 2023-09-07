@@ -26,7 +26,7 @@ export const NewMessageForm = () => {
                 if (body){
                     addNewMessage({
                         variables: {
-                            username: session?.username ?? '',
+                            username: session?.user?.name ?? '',
                             avatar: session?.user?.image,
                             body
                         }
