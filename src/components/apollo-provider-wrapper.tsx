@@ -31,7 +31,7 @@ export const ApolloProviderWrapper = ({ children }: PropsWithChildren) => {
         headers: {
           ...headers,
           authorization: `Bearer ${token}`
-        }
+        },
       }
     })
 
@@ -44,7 +44,7 @@ export const ApolloProviderWrapper = ({ children }: PropsWithChildren) => {
           httpLink
         )
       ]),
-      cache: new InMemoryCache()
+      cache: new InMemoryCache(),
     })
   }, [])
 
