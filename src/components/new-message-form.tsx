@@ -21,7 +21,7 @@ export const NewMessageForm = () => {
     const [addNewMessage] = useMutation(AddNewMessageMutation)
     return (
         <form
-            onSubmit={e => {
+            onSubmit={(e) => {
                 e.preventDefault();
 
                 if (body){

@@ -40,8 +40,8 @@ jwt: {
     },
     session({ session, token }) {
       if (token.username) {
-          // token.username = session.user?.name 
-          session.user.name = token?.username
+          token.username = session.user?.name 
+          // session.user?.name = token?.username
       }
       return session
     }
