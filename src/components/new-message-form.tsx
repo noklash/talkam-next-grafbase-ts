@@ -1,3 +1,4 @@
+
 import { gql, useMutation } from "@apollo/client";
 import { useState } from 'react'
 import { useSession } from 'next-auth/react'
@@ -28,8 +29,8 @@ export const NewMessageForm = () => {
                         variables: {
                             username: session?.user?.name ?? '',
                             avatar: session?.user?.image,
-                            body
-                        }
+                            body,
+                        },
                     })
                     setBody('')
                 }

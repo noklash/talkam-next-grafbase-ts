@@ -6,10 +6,11 @@ import { NewMessageForm } from '@/components/new-message-form'
 import { useSession } from 'next-auth/react'
 
 
-const inter = Inter({ subsets: ['latin'] })
+// const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   const { data: session } = useSession()
+  
   return (
     <div className="flex flex-col">
       <Header />

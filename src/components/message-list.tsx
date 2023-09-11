@@ -40,14 +40,14 @@ useEffect(() => {
     }
 }, [data?.messageCollection.edges.length, entry?.target])
 
-// if (loading)
-//   console.log(data)
-//     return (
-//         <div className='h-full flex items-center justify-center'> 
-//             <p className='text-white'>Fetching most recent chat messages.</p>
+if (loading)
+  // console.log(data)
+    return (
+        <div className='h-full flex items-center justify-center'> 
+            <p className='text-white'>Fetching most recent chat messages.</p>
 
-//         </div>
-// )
+        </div>
+)
 
 
 if (error)
@@ -77,18 +77,18 @@ return (
 }
 
 
-// const GetRecentMessageQuery = gql`
-//     query GetRecentMessages($last: Int){
-//         messageCollection(last: $last){
-//             edges {
-//                 node{
-//                     id
-//                     username
-//                     avatar
-//                     body
-//                     likes
-//                     createdAt
-//                 }
-//             }
-//         }
-//     }`
+const GetRecentMessageQuery = gql`
+    query GetRecentMessages($last: Int){
+        messageCollection(last: $last){
+            edges {
+                node{
+                    id
+                    username
+                    avatar
+                    body
+                    likes
+                    createdAt
+                }
+            }
+        }
+    }`

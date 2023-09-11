@@ -40,14 +40,8 @@ jwt: {
     },
     session({ session, token }) {
       if (token.username) {
-        
-        // if (session.user !== undefined){
-          token.username = session.user?.name 
-          // session.username = token?.username
-          // still trying 
-          // console.log(session.user)
-        // }
-        
+          // token.username = session.user?.name 
+          session.user.name = token?.username
       }
       return session
     }
