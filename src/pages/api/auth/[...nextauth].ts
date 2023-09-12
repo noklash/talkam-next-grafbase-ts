@@ -2,7 +2,7 @@ import NextAuth, { NextAuthOptions } from 'next-auth'
 import { JWT } from 'next-auth/jwt';
 import jsonwebtoken from "jsonwebtoken";
 import GitHubProvider from 'next-auth/providers/github';
-
+// import GoogleProvider from 'next-auth/providers/google'
 import { getServerSession } from "next-auth/next";
 import { AdapterUser } from "next-auth/adapters";
 // import { createUser, getUser } from "./actions";
@@ -13,7 +13,11 @@ export const authOptions: NextAuthOptions = {
         GitHubProvider({
           clientId: process.env.GITHUB_CLIENT_ID!,
           clientSecret: process.env.GITHUB_CLIENT_SECRET!
-        })
+        }),
+        // GoogleProvider({
+        //   clientId: process.env.GOOGLE_CLIENT_ID!,
+        //   clientSecret: process.env.GOOGLE_CLIENT_SECRET!
+        // })
       ],
 //    To finish configuring NextAuth.js with Grafbase we will need to update the JWT
 //     generated to include the iss claim that matches the issuer value in
