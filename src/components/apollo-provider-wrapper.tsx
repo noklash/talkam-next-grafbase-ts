@@ -31,9 +31,13 @@ export const ApolloProviderWrapper = ({ children }: PropsWithChildren) => {
         headers: {
           ...headers,
           authorization: `Bearer ${token}`
+          
         },
+        
       }
     })
+    
+// console.log(`token is ${}`)
 
     return new ApolloClient({
       link: from([authMiddleware,
